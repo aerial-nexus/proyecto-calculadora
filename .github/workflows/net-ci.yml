@@ -1,0 +1,11 @@
+name: CI test
+
+on:
+    push:
+
+jobs:
+    ci:
+        uses: aerial-nexus/an-reusable-workflows/.github/workflows/net-ci.yml@main
+        with:
+            project-path: Calculadora.csproj
+            run-app: "false"
