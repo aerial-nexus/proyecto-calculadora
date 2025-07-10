@@ -5,7 +5,11 @@ on:
 
 jobs:
     ci:
+        permissions:
+            contents: read    # Para clonar el repo
+            actions: read     # Para acceder al workflow reusable
         uses: aerial-nexus/an-reusable-workflows/.github/workflows/net-ci.yml@main
         with:
             project-path: Calculadora.csproj
             run-app: "false"
+        secrets: inherit  # Hereda los secrets del caller
